@@ -1,0 +1,22 @@
+{
+  "name": "dast-test-app",
+  "version": "1.0.0",
+  "description": "Deliberately vulnerable Next.js app for testing Vigilnz DAST scanner",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 5005",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.29",
+    "react": "^18",
+    "react-dom": "^18",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.29"
+  }
+}

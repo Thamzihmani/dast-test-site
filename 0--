@@ -1,0 +1,1 @@
+hello' AND (SELECT COUNT(*)/*x*/ FROM all_tables)
