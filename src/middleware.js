@@ -69,9 +69,9 @@ export function middleware(request) {
   }
 
   // WAF is off by default — set NEXT_PUBLIC_ENABLE_FAKE_WAF=true in .env to enable
-  // if (process.env.NEXT_PUBLIC_ENABLE_FAKE_WAF !== 'true') {
-  //   return NextResponse.next()
-  // }
+  if (process.env.NEXT_PUBLIC_ENABLE_FAKE_WAF !== 'true') {
+    return NextResponse.next()
+  }
 
   let urlString
   try {
