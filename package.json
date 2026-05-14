@@ -1,0 +1,21 @@
+{
+  "name": "tanstack-vuln-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@tanstack/react-router": "1.169.5",
+    "@tanstack/router-core": "1.169.5",
+    "@tanstack/router-devtools": "1.169.5",
+    "@tanstack/react-router-devtools": "1.169.5",
+    "@tanstack/history": "1.169.5",
+    "@tanstack/router-utils": "1.169.5"
+  }
+}
