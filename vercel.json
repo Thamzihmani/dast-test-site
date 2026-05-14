@@ -1,8 +1,0 @@
-{
-  "framework": "nextjs",
-  "env": {
-    "ENABLE_FAKE_WAF": "false",
-    "JWT_SECRET": "secret",
-    "SSRF_TIMEOUT_MS": "3000"
-  }
-}
