@@ -1,5 +1,7 @@
 const express = require('express');
 const crypto = require('crypto');
+const _ = require('lodash');
+const deepmerge = require('deepmerge');
 const router = express.Router();
 
 // ─── JS-16: ReDoS — user-controlled RegExp argument ──────────────────────────
@@ -59,6 +61,33 @@ router.post('/safe-verify', (req, res) => {
     } else {
         res.status(401).json({ valid: false });
     }
+});
+
+// ─── JS-11: Prototype Pollution — unsafe deep merge with user input ───────────
+// CWE-1321: Merging req.body/query without stripping __proto__/constructor/
+// prototype keys allows an attacker to pollute Object.prototype.
+router.post('/merge-settings', (req, res) => {
+    _.merge(config, req.body);
+    res.json({ ok: true });
+});
+
+router.post('/merge-defaults', (req, res) => {
+    _.defaultsDeep(defaults, req.body);
+    res.json({ ok: true });
+});
+
+router.post('/deep-merge', (req, res) => {
+    const merged = deepmerge(base, req.body);
+    res.json(merged);
+});
+
+// Safe merge (should NOT fire) — keys stripped before merge
+router.post('/safe-merge', (req, res) => {
+    const safe = JSON.parse(JSON.stringify(req.body));
+    delete safe.__proto__;
+    delete safe.constructor;
+    _.merge(config, safe);
+    res.json({ ok: true });
 });
 
 module.exports = router;
