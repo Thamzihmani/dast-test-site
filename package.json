@@ -1,21 +1,22 @@
 {
-  "name": "tanstack-vuln-test",
+  "name": "dast-test-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Deliberately vulnerable Next.js app for testing Vigilnz DAST scanner",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev -p 5005",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "next": "14.2.29",
+    "react": "^18",
+    "react-dom": "^18",
+    "jsonwebtoken": "^9.0.2"
+  },
   "devDependencies": {
-    "@tanstack/react-router": "1.169.5",
-    "@tanstack/router-core": "1.169.5",
-    "@tanstack/router-devtools": "1.169.5",
-    "@tanstack/react-router-devtools": "1.169.5",
-    "@tanstack/history": "1.169.5",
-    "@tanstack/router-utils": "1.169.5"
+    "eslint": "^8",
+    "eslint-config-next": "14.2.29"
   }
 }

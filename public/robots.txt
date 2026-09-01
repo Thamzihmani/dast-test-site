@@ -1,0 +1,28 @@
+User-agent: *
+
+# ── Paths intentionally disallowed to test ignoreRobotsTxt config ──────────
+# When ignoreRobotsTxt=false (default): spider SKIPS these paths
+# When ignoreRobotsTxt=true:            spider CRAWLS these paths
+Disallow: /admin
+Disallow: /admin/users
+Disallow: /admin/settings
+Disallow: /internal
+Disallow: /debug
+Disallow: /api/idor
+Disallow: /api/jwt
+Disallow: /api/ssrf
+
+# Public pages the spider is allowed to crawl
+Allow: /
+Allow: /login
+Allow: /dashboard
+Allow: /deep
+Allow: /pages-list
+Allow: /api/xss
+Allow: /api/sqli
+Allow: /api/headers
+Allow: /api/cors
+Allow: /api/redirect
+Allow: /api/csrf
+Allow: /api/clickjacking
+Allow: /api/rate-limit
